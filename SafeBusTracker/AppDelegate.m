@@ -13,12 +13,73 @@
 @end
 
 @implementation AppDelegate
+LoginViewController *loginView;
+MapViewController *mapView;
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor blackColor];
+    
+    //retrieve auth  key for nsuserdefaults
+    NSUserDefaults *retrieveKey = [NSUserDefaults standardUserDefaults];
+    NSString *authKey = [retrieveKey stringForKey:@"authKey"];
+    
+    //setting root view controller
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(LoginNotification:)
+                                                 name:@"login view"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(mapNotification:)
+                                                 name:@"map view"
+                                               object:nil];
+    
+    //For auth key not equal to nil for calling map view page
+    if(authKey !=nil){
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"map view" object:self];
+    }
+    else{
+        
+        // for calling login view page for login
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"login view" object:self];
+    }
+   
+    [self.window makeKeyAndVisible];
     return YES;
 }
+
+//Login view
+-(void)LoginNotification:(NSNotification *)aNotification
+{
+    loginView  = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    navController=[[UINavigationController alloc]initWithRootViewController:loginView];
+    navController.interactivePopGestureRecognizer.enabled = NO;
+    self.window.rootViewController=navController;
+ 
+}
+//Map view
+-(void)mapNotification:(NSNotification *)aNotification
+{
+    
+    //retrieve parent name in nsuserdefaults
+    NSUserDefaults *retrieveKey = [NSUserDefaults standardUserDefaults];
+    NSString *parentName =[retrieveKey stringForKey:@"parent_name"];
+    mapView  = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+    mapView.parentName = parentName;
+    navController=[[UINavigationController alloc]initWithRootViewController:mapView];
+    navController.interactivePopGestureRecognizer.enabled = NO;
+    self.window.rootViewController=navController;
+    
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
