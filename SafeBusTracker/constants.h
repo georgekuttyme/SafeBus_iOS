@@ -9,8 +9,8 @@
 //setting title for application
 #define SAFEBUSTRACKER_TITLE @"SafeBusTracker"
 //Setting appname ,establishment id ,title name
-#define app_name  @"Chempaka"
-#define title_name  @"Chempaka Kinder Garten"
+#define app_name  @"SafeBusTracker"
+#define title_name  @"SafeBusTracker"
 #define establishment_id  @"0"
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
