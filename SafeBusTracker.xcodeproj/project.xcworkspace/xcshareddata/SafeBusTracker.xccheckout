@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>99FEB57C-BCB9-4CC5-A90D-5307FC392EBB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SafeBusTracker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0DDFDD1AB3E374AEEBD3440AFA4FEC99F4CC1896</key>
+		<string>http://github.rainconcert.in/rcadmin/safebusmobileapp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SafeBusTracker.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0DDFDD1AB3E374AEEBD3440AFA4FEC99F4CC1896</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://github.rainconcert.in/rcadmin/safebusmobileapp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0DDFDD1AB3E374AEEBD3440AFA4FEC99F4CC1896</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0DDFDD1AB3E374AEEBD3440AFA4FEC99F4CC1896</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS_SAFEBUS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

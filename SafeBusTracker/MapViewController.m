@@ -312,6 +312,7 @@
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:SAFEBUSTRACKER_TITLE message:@"Your network connectivity seems to be weak. Please retry." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
+    [HUD hide:YES];
 }
 
 - (void)reqCompletedWithData:(NSData *)responsData typeOfRequest:(NSString *)requestType{
